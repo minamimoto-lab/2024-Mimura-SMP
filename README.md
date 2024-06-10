@@ -14,7 +14,7 @@ editor: visual
 
 E-mail: kmimura@ism.ac.jp
 
-The algorithm optimizes the kernel function and hyperparameters of the [HDP-GP-HSMM](https://github.com/naka-lab/HDP-GP-HSMM) by Dr. Tomoaki, Nakamura to conform to primate behavior analysis.
+This algorithm optimizes the kernel function and hyperparameters of the [HDP-GP-HSMM](https://github.com/naka-lab/HDP-GP-HSMM) by Dr. Tomoaki, Nakamura to conform to primate behavior analysis.
 
 
 # 1. Environment
