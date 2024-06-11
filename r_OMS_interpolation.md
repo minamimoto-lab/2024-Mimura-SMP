@@ -71,7 +71,7 @@ gg_OMS_xz(dat_f) %>%
 ```
 
 
-![](r_OMS_interpolation_files/figure-html/unnamed-chunk-4-1.png){width="768"}
+![](r_OMS_interpolation_files/figure-html/unnamed-chunk-4-1.png)
 
 
 
