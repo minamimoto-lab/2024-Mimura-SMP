@@ -44,9 +44,6 @@ SMP works in this environment at a minimum. If you wish to reproduce the data an
 [13] ggplot2_3.4.4     tidyverse_2.0.0  
 ```
 
-
-
-
 # 2. Marmoset free-feeding behavior
 
 # 3. Macaque motion analysis
