@@ -131,7 +131,7 @@ dat_rot_nest_filter$d %>% sum() %>% {. / 60}
 dat_g <-
   dat_rot %>% 
   filter(parts == "Head")
-å
+
 # All data points: black
 # Available (continuous) data fragments: red
 ggplot() +
@@ -147,7 +147,7 @@ ggplot() +
 ```
 
 
-![](r_OMS_interpolation_files/figure-html/unnamed-chunk-7-1.png)
+![](r_OMS_interpolation_files/figure-html/unnamed-chunk-7-1.png){width="40%"}
 
 
 **interpolation (with loess)**
