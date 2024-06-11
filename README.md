@@ -3,9 +3,9 @@ title: "Syntactic Motion Parser"
 format: html
 execute: 
   keep-md: TRUE
+  eval: FALSE
 editor: visual
 ---
-
 
 
 
@@ -42,9 +42,19 @@ The data analysis code has been verified to work with R 4.3.3. The following pac
 
 # 3. Macaque motion analysis
 
-- [data cleaning (interpolation)](r_OMS_interpolation.md)
+Run `SMP_omp.py` for SMP simulation on the data from [OpenMonkeyStudio](https://github.com/OpenMonkeyStudio) (takes several hours depending on CPU and RAM).
 
-- preprocess
+```
+python SMP_omp.py
+```
+
+- about OpenMonkeyStudio: [Bala et al., Nat.Commun. 2020](https://doi.org/10.1038/s41467-020-18441-5)
+
+## data processing
+
+- [data cleaning (rotation, interpolation)](r_OMS_interpolation.md)
+
+- [preprocess (PCA)](r_OMS_preprocess.md)
 
 - 
 

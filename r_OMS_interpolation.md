@@ -77,6 +77,7 @@ gg_OMS_xz(dat_f) %>%
 
 **rotation**
 
+Rotate data to the front-back coordinate frame by frame.
 
 ``` {.r .cell-code}
 dat_rot <-
@@ -89,6 +90,7 @@ dat_rot <-
 
 **filter**
 
+Data fragments with an inter-frame gap of less than 200 frames and longer than 100 seconds are extracted.
 
 ``` {.r .cell-code}
 dat_rot_nest <-
@@ -104,25 +106,20 @@ dat_rot_nest <-
 dat_rot_nest_filter <-
   dat_rot_nest %>% 
   filter(d >= 100) 
-
-# No. of fragments
-dat_rot_nest_filter %>% nrow()
 ```
 
 
-```         
-[1] 29
+```
+# No. of fragments
+dat_rot_nest_filter %>% nrow()
+> [1] 29
 ```
 
 
 ``` {.r .cell-code}
 # total duration (min)
 dat_rot_nest_filter$d %>% sum() %>% {. / 60}
-```
-
-
-```         
-[1] 90.38333
+> [1] 90.38333
 ```
 
 

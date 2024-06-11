@@ -51,7 +51,8 @@ def recog( modeldir, savedir, dim, gamma, eta, initial_class, avelen, maxlen, mi
 
 
 def main():
-    nums = range(10, 31, 5)
+  nums = 10
+#    nums = range(10, 31, 5)
     for i in nums:
     #parameters
       dim = 2

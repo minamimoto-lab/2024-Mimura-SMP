@@ -11,59 +11,44 @@ execute:
 editor: visual
 ---
 
-
-
 **packages**
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 source("R/source.R")
 source("R/f_OMS.R")
 ```
-:::
 
 
 **path**
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 path_dat <- "data/dat_oms.csv"
 ```
-:::
 
-::: {.cell}
 
-```{.r .cell-code}
+
+``` {.r .cell-code}
 path_output <- "data/oms_for_smp"
 
 dir.create(path_output, showWarnings = FALSE)
 ```
-:::
 
 
 **data**
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat <-
   path_dat %>% 
   read_csv()
 ```
-:::
 
 
 **pca**
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 .params <-
   dat %>% 
   select(starts_with("x_"), starts_with("y_"), starts_with("z_")) %>% 
@@ -78,15 +63,12 @@ dat_pca <-
   dat %>% 
   cbind(pca$x)
 ```
-:::
 
 
 **scale**
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_pc_scaled <-
   dat_pca %>% 
   mutate_at(vars(starts_with("PC")), \(x){ x / max(abs(x)) }) %>% 
@@ -96,15 +78,12 @@ dat_pc_scaled <-
   unnest(data) %>% 
   select(batch, fragment, id, everything())
 ```
-:::
 
 
 **preprocess**
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_fragment <-
   dat_pc_scaled %>% 
   group_nest(batch, fragment, id, keep = TRUE) %>% 
@@ -113,19 +92,16 @@ dat_fragment <-
          w = str_c(path_output, "/dat_oms_", w, ".txt")) %>% 
   mutate(w_csv = str_replace(w, ".txt", ".csv"))
 ```
-:::
 
 
 **save**
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_fragment %$% 
   map2(pcs, w, \(x, y){write.table(x, y, row.names = F, col.names = F)})
 
 dat_fragment %$% 
   map2(data, w_csv, \(x, y){write_csv(x, y)})
 ```
-:::
+
