@@ -42,7 +42,7 @@ The data analysis code has been verified to work with R 4.3.3. The following pac
 
 # 3. Macaque motion analysis
 
-- [data cleaning (interpolation)](r_OSM_interpolation.md)
+- [data cleaning (interpolation)](r_OMS_interpolation.md)
 
 - preprocess
 
