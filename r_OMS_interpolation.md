@@ -11,26 +11,16 @@ execute:
 editor: visual
 ---
 
-
-
 **Packages**
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 source("R/source.R")
 source("R/f_OMS.R")
 ```
-:::
-
 
 **path**
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 path_omp <- "data/rawdata_OMS"
 
 path_mat <-
@@ -41,8 +31,7 @@ path_mat <-
 path_mat
 ```
 
-::: {.cell-output .cell-output-stdout}
-```
+```         
 [1] "data/rawdata_OMS/Batch10/coords_3D.mat"
 [2] "data/rawdata_OMS/Batch11/coords_3D.mat"
 [3] "data/rawdata_OMS/Batch7/coords_3D.mat" 
@@ -50,16 +39,13 @@ path_mat
 [5] "data/rawdata_OMS/Batch9a/coords_3D.mat"
 [6] "data/rawdata_OMS/Batch9b/coords_3D.mat"
 ```
-:::
-:::
+
 
 
 **import data**
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_oms <-
   path_mat %>% 
   tibble(path = .) %>% 
@@ -67,15 +53,12 @@ dat_oms <-
   arrange_batch() %>% 
   unnest(data)
 ```
-:::
 
 
 **visualization**
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_f <-
   dat_oms%>% 
   filter(batch == "Batch10") %>% 
@@ -87,33 +70,27 @@ gg_OMS_xz(dat_f) %>%
   coord_fixed()
 ```
 
-::: {.cell-output-display}
-![](r_OMS_interpolation_files/figure-html/unnamed-chunk-4-1.png){width=768}
-:::
-:::
+
+![](r_OMS_interpolation_files/figure-html/unnamed-chunk-4-1.png){width="768"}
+
 
 
 **rotation**
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_rot <-
   dat_oms %>% 
   group_nest(batch, frame) %>% 
   mutate(data = map(data, rot_HipNeck)) %>% 
   unnest(data)
 ```
-:::
 
 
 **filter**
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_rot_nest <-
   dat_rot %>% 
   wide_omp() %>% 
@@ -132,27 +109,25 @@ dat_rot_nest_filter <-
 dat_rot_nest_filter %>% nrow()
 ```
 
-::: {.cell-output .cell-output-stdout}
-```
+
+```         
 [1] 29
 ```
-:::
 
-```{.r .cell-code}
+
+``` {.r .cell-code}
 # total duration (min)
 dat_rot_nest_filter$d %>% sum() %>% {. / 60}
 ```
 
-::: {.cell-output .cell-output-stdout}
-```
+
+```         
 [1] 90.38333
 ```
-:::
-:::
 
-::: {.cell}
 
-```{.r .cell-code}
+
+``` {.r .cell-code}
 dat_g <-
   dat_rot %>% 
   filter(parts == "Head")
@@ -171,18 +146,14 @@ ggplot() +
   theme(axis.title.y = element_blank())
 ```
 
-::: {.cell-output-display}
-![](r_OMS_interpolation_files/figure-html/unnamed-chunk-7-1.png){width=768}
-:::
-:::
+
+![](r_OMS_interpolation_files/figure-html/unnamed-chunk-7-1.png){width="768"}
 
 
 **interpolation (with loess)**
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_rot_loess <-
   dat_rot_nest_filter %>% 
   arrange_data_for_loess() %>% 
@@ -207,16 +178,12 @@ dat_rot_pred <-
          time = time / 20) %>% 
   select(batch, fragment, frame, time, everything())
 ```
-:::
 
 
 **save**
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_rot_pred %>% 
   write_csv("data/dat_oms.csv")
 ```
-:::
+
