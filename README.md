@@ -28,7 +28,13 @@ We run SMP in a python 3.9 and require the following packages.
 
 If you are using [Pipevn](https://pipenv.pypa.io/en/latest/) for Python virtual environment maneger, you can use the `Pipfile` in this repository for the environment setup. You can also refer the `requiremtens.txt` file.
 
-The data analysis code has been verified to work with R 4.3.3. The following packages were used.
+Clone this repository to the location where you built your Python environment.
+
+```
+git clone https://github.com/minamimoto-lab/2024-Mimura-SMP
+```
+
+SMP works in this environment at a minimum. If you wish to reproduce the data analysis, please also prepare the R environment using R 4.3.3 and following packages were used.
 
 ```
  [1] ggrepel_0.9.5     magrittr_2.0.3    patchwork_1.2.0  
@@ -37,6 +43,9 @@ The data analysis code has been verified to work with R 4.3.3. The following pac
 [10] readr_2.1.4       tidyr_1.3.0       tibble_3.2.1     
 [13] ggplot2_3.4.4     tidyverse_2.0.0  
 ```
+
+
+
 
 # 2. Marmoset free-feeding behavior
 
