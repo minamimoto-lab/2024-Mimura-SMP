@@ -26,7 +26,7 @@ We run SMP in a python 3.9 and require the following packages.
 - pandas >= 1.4.4
 - cython >= 3.0.10
 
-If you are using Pipevn for Python virtual environment management, you can use the `Pipfile` in this repository for the environment setup. You can also refer the `requiremtens.txt` file.
+If you are using [Pipevn](https://pipenv.pypa.io/en/latest/) for Python virtual environment maneger, you can use the `Pipfile` in this repository for the environment setup. You can also refer the `requiremtens.txt` file.
 
 The data analysis code has been verified to work with R 4.3.3. The following packages were used.
 
@@ -41,5 +41,12 @@ The data analysis code has been verified to work with R 4.3.3. The following pac
 # 2. Marmoset free-feeding behavior
 
 # 3. Macaque motion analysis
+
+- [data cleaning (interpolation)](r_OSM_interpolation.md)
+
+- preprocess
+
+- 
+
 
 # 4. Marmoset chemogenetic manipulation behavior
