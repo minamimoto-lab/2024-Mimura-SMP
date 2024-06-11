@@ -147,7 +147,7 @@ ggplot() +
 ```
 
 
-![](r_OMS_interpolation_files/figure-html/unnamed-chunk-7-1.png){width="40%"}
+![](r_OMS_interpolation_files/figure-html/unnamed-chunk-7-1.png)
 
 
 **interpolation (with loess)**
