@@ -62,7 +62,7 @@ python SMP_omp.py
 
 - [preprocess (PCA)](r_OMS_preprocess.md)
 
-- 
+- [postprocess (motion recovery)](r_OMS_postprocess.md)
 
 
 # 4. Marmoset chemogenetic manipulation behavior
