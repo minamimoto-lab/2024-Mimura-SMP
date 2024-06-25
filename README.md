@@ -66,3 +66,6 @@ python SMP_omp.py
 
 
 # 4. Marmoset chemogenetic manipulation behavior
+
+- about chemogenetic neural manipulation in marmoset: [Mimura et al., iScience 2021](https://pubmed.ncbi.nlm.nih.gov/34568790/)
+
