@@ -64,6 +64,16 @@ python SMP_omp.py
 
 - [postprocess (inverse PCA)](r_OMS_postprocess.md)
 
+## data
+
+- `data/dat_SMPresults_OMP.csv`
+  - batch, id_datafragment: data id
+  - motif: SMP motif
+  - motiftag: fragmented data id
+  - frame, time: time stamp (1 Hz)
+  - x_, y_, z_...: tracking data body keypoints
+  - PC1-36: principal component scores
+
 
 # 4. Chemogenetic manipulation in marmoset
 
