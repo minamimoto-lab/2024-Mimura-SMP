@@ -74,6 +74,13 @@ python SMP_omp.py
   - x_, y_, z_...: tracking data body keypoints
   - PC1-36: principal component scores
 
+- `data/dat_OMS_invPCA.csv`
+  - motif: SMP motif
+  - lank: rank of motif observation
+  - time: time stamp (1 Hz)
+  - PC1-36: mean of PCs
+  - x_, y_, z_...: motion data recovered by inverse PCA
+
 
 # 4. Chemogenetic manipulation in marmoset
 
