@@ -65,7 +65,8 @@ python SMP_omp.py
 - [postprocess (inverse PCA)](r_OMS_postprocess.md)
 
 
-# 4. Marmoset chemogenetic manipulation behavior
+# 4. Chemogenetic manipulation in marmoset
 
 - about chemogenetic neural manipulation in marmoset: [Mimura et al., iScience 2021](https://pubmed.ncbi.nlm.nih.gov/34568790/)
-
+  - 
+We injected adeno-associated virus vectors expressing the excitatory DREADD (designer receptor exclusively activated by designer drugs) hM3Dq into the unilateral substantia nigra (SN) in marmosets. The marmosets rotated in a contralateral direction relative to the activated side 30-90 min after consuming food containing the highly potent DREADD agonist deschloroclozapine (DCZ).
