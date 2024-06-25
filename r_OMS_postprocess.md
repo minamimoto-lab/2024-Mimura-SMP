@@ -11,56 +11,34 @@ execute:
 editor: visual
 ---
 
-
-
 **Packages**
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 source("R/source.R")
 source("R/f_OMS.R")
 ```
-:::
-
-
 
 **Path**
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 path <- "data/dat_SMPresults_OMP.csv"
 ```
-:::
-
-
 
 **import**
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_raw <- 
   path %>% 
   fread() %>% 
   as_tibble()
 ```
-:::
 
 
 **over view**
 
+-   duration & n
 
-- duration & n
-
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_duration <-
   dat_raw %>% 
   group_nest(motiftag, motif) %>% 
@@ -77,11 +55,8 @@ dat_lank <-
   select(lank, motif, N) %>% 
   distinct()
 ```
-:::
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 ggplot(data = dat_duration) +
   aes(lank, duration) +
   geom_boxplot() +
@@ -90,19 +65,11 @@ ggplot(data = dat_duration) +
   labs(y = "duration (s)", x = "motifid")
 ```
 
-::: {.cell-output-display}
-![](r_OMS_postprocess_files/figure-html/unnamed-chunk-5-1.png){width=768}
-:::
-:::
+![](r_OMS_postprocess_files/figure-html/unnamed-chunk-5-1.png){width="768"}
 
+-   PCs
 
-
-- PCs
-
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_pca <-
   dat_raw %>% 
   left_join(dat_lank %>% select(!N), by = "motif") %>% 
@@ -121,11 +88,8 @@ dat_pca_long <-
   arrange(motiftag, motif, lank, PC, time) %>% 
   mutate(grp = str_c(motiftag, PC))
 ```
-:::
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 ggplot(dat_pca_long) +
   aes(time, score, color = PC) +
   geom_path(aes(group = grp), alpha = 0.2) +
@@ -133,20 +97,13 @@ ggplot(dat_pca_long) +
   facet_wrap(~lank, nrow = 2)
 ```
 
-::: {.cell-output-display}
-![](r_OMS_postprocess_files/figure-html/unnamed-chunk-7-1.png){width=768}
-:::
-:::
-
+![](r_OMS_postprocess_files/figure-html/unnamed-chunk-7-1.png){width="768"}
 
 **inverse PCA**
 
-- pca
+-   pca
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 list_params <-
   dat_raw %>% 
   select(starts_with("x_"),
@@ -159,16 +116,10 @@ pca <-
   select(all_of(list_params)) %>% 
   prcomp(scale = TRUE)
 ```
-:::
 
+-   mean of PCs
 
-
-- mean of PCs
-
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_pcs_mean <-
   dat_pca %>% 
   select(motiftag, motif, lank, time, starts_with("PC")) %>% 
@@ -176,11 +127,8 @@ dat_pcs_mean <-
   summarise(across(starts_with("PC"), mean)) %>% 
   ungroup()
 ```
-:::
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_pcs_mean %>% 
   select(motif, lank, time, PC1, PC2) %>% 
   pivot_longer(
@@ -196,18 +144,11 @@ dat_pcs_mean %>%
   facet_wrap(~lank, nrow = 2)
 ```
 
-::: {.cell-output-display}
-![](r_OMS_postprocess_files/figure-html/unnamed-chunk-10-1.png){width=768}
-:::
-:::
+![](r_OMS_postprocess_files/figure-html/unnamed-chunk-10-1.png)
 
+-   inv PCA
 
-- inv PCA
-
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_params_raw <-
   dat_pcs_mean %>% 
   select(starts_with("PC")) %>% 
@@ -218,26 +159,18 @@ dat_params_raw <-
 write_csv(dat_params_raw,
           "data/dat_OMS_invPCA.csv")
 ```
-:::
 
+-   visualization
 
-- visualization
-
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_params_xyz <-
   dat_params_raw %>% 
   arrange_xyz() %>% 
   filter(time <= 30) %>% 
   rename(sec = time)
 ```
-:::
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_params_xyz %>% 
   mutate(x = x + sec * 0.5) %>% 
   gg_OMS_xy2() +
@@ -249,7 +182,4 @@ dat_params_xyz %>%
   labs(x = "time (s)")
 ```
 
-::: {.cell-output-display}
-![](r_OMS_postprocess_files/figure-html/unnamed-chunk-13-1.png){width=768}
-:::
-:::
+![](r_OMS_postprocess_files/figure-html/unnamed-chunk-13-1.png)
