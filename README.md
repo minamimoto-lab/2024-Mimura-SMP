@@ -47,7 +47,7 @@ SMP works in this environment at a minimum. If you wish to reproduce the data an
 # 2. Marmoset free-feeding behavior
 
 ## data processing
-- [The UMAP and k-means clustering](r_marmofeed_UMAP_kmeans.md)
+- [Podyutr model: The UMAP and k-means clustering](r_marmofeed_UMAP_kmeans.md)
 - [SMP vs. the Posture Model](r_marmofeed_SMPvsPosturemodel.md)
 
 
