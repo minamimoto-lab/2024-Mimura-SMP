@@ -55,11 +55,6 @@ dat_nest_motif <-
   group_nest(tag_motif, motif) %>% 
   mutate(len_motif = map_dbl(data, nrow))
 
-dat_nest_kclust <-
-  dat %>% 
-  group_nest(tag_kclust18, kclust18) %>% 
-  mutate(len_kclust = map_dbl(data, nrow))
-
 dat_nest_motif %>% 
   summarise(median = median(len_motif) / 10,
             mean = mean(len_motif) / 10,
@@ -74,6 +69,11 @@ dat_nest_motif %>%
 ```
 
 ``` {.r .cell-code}
+dat_nest_kclust <-
+  dat %>% 
+  group_nest(tag_kclust18, kclust18) %>% 
+  mutate(len_kclust = map_dbl(data, nrow))
+
 dat_nest_kclust %>%  
   summarise(median = median(len_kclust) / 10,
             mean = mean(len_kclust) / 10,
