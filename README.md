@@ -46,6 +46,9 @@ SMP works in this environment at a minimum. If you wish to reproduce the data an
 
 # 2. Marmoset free-feeding behavior
 
+## data processing
+- [The UMAP and k-means clustering](r_marmofeed_UMAP_kmeans.md)
+
 # 3. Macaque motion analysis
 
 Run `SMP_omp.py` for SMP simulation on the data from [OpenMonkeyStudio](https://github.com/OpenMonkeyStudio) (takes several hours depending on CPU and RAM).
