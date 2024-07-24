@@ -11,57 +11,37 @@ execute:
 editor: visual
 ---
 
-
-
-The UMAP and k-means clustering results for marmoset free-feeding data used in the paper are included in the file `dat_SMPresults_marmofeed.csv` (columns `kclust06` and `kclust18`). 
+The UMAP and k-means clustering results for marmoset free-feeding data used in the paper are included in the file `dat_SMPresults_marmofeed.csv` (columns `kclust06` and `kclust18`).
 
 The following code is provided to reproduce these results.
-
 
 -   source file
 
 
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 source("R/source.R")
 ```
-:::
-
 
 -   path
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 path <- 
   "data/dat_SMPresults_marmofeed.csv"
 ```
-:::
-
 
 -   import data
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_raw <-
   path %>% 
   fread() %>% 
   as_tibble() %>% 
   select(!starts_with("kclust"))
 ```
-:::
-
 
 -   PC score
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 prams_for_pca <-
   dat_raw %>% 
   select(starts_with("x_"), starts_with("y_"), starts_with("z_"), starts_with("v_")) %>% 
@@ -78,29 +58,21 @@ dat <-
   select(!starts_with("PC")) %>% 
   bind_cols(fit_pca$x)
 ```
-:::
 
 
 -   UMAP
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 fit_umap <-
   dat %>% 
   select(PC1, PC2) %>% 
   umap::umap()
 ```
-:::
 
 
 -   k-means clustering
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 kclust18 <-
   fit_umap$layout %>% 
   kmeans(centers = 18)
@@ -109,15 +81,11 @@ kclust6 <-
   fit_umap$layout %>% 
   kmeans(centers = 6)
 ```
-:::
 
 
 -   output
 
-
-::: {.cell}
-
-```{.r .cell-code}
+``` {.r .cell-code}
 dat_umap <-
   dat %>%
   cbind(fit_umap$layout %>% as_tibble()) %>% 
@@ -130,4 +98,4 @@ dat_umap <-
 dat_umap %>% 
   write_csv("data/dat_marmofeed_umap_kclust.csv")
 ```
-:::
+
