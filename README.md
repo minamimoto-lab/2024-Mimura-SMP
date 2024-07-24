@@ -48,6 +48,8 @@ SMP works in this environment at a minimum. If you wish to reproduce the data an
 
 ## data processing
 - [The UMAP and k-means clustering](r_marmofeed_UMAP_kmeans.md)
+- [Comparison of data fragment length obtained by SMP and the Posture Model](r_marmofeed_SMPvsPosturemodel.md)
+
 
 # 3. Macaque motion analysis
 
