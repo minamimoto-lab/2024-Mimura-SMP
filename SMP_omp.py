@@ -12,7 +12,7 @@ import glob
 def learn( savedir, dim, gamma, eta, initial_class, avelen, maxlen, minlen, skiplen ):
     gpsegm = GPSegmentation( dim, gamma, eta, initial_class, avelen, maxlen, minlen, skiplen)
 
-    files =  [ "data/oms_scaledpcs/dat_oms_%02d.txt" % j for j in range(29) ]
+    files =  [ "data/data_for_SMP-OMS/dat_oms_%02d.txt" % j for j in range(29) ]
     gpsegm.load_data( files )
     liks = []
 
@@ -39,7 +39,7 @@ def recog( modeldir, savedir, dim, gamma, eta, initial_class, avelen, maxlen, mi
     print ("class", initial_class)
     gpsegm = GPSegmentation( dim, gamma, eta, initial_class, avelen, maxlen, minlen, skiplen)
 
-    gpsegm.load_data( [ "data/oms_scaledpcs/dat_oms_%02d.txt" % j for j in range(29) ] )
+    gpsegm.load_data( [ "data/data_for_SMP-OMS/dat_oms_%02d.txt" % j for j in range(29) ] )
     gpsegm.load_model( modeldir )
 
 
