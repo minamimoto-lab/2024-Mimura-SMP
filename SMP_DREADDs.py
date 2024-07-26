@@ -12,7 +12,7 @@ import glob
 def learn( savedir, dim, gamma, eta, initial_class, avelen, maxlen, minlen, skiplen ):
     gpsegm = GPSegmentation( dim, gamma, eta, initial_class, avelen, maxlen, minlen, skiplen)
 
-    files =  [ "data/oms_scaledpcs/dat_oms_%02d.txt" % j for j in range(29) ]
+    files =  [ "data/DREADDs_for_smp/case_%02d.txt" % j for j in range(16) ]
     gpsegm.load_data( files )
     liks = []
 
@@ -39,7 +39,7 @@ def recog( modeldir, savedir, dim, gamma, eta, initial_class, avelen, maxlen, mi
     print ("class", initial_class)
     gpsegm = GPSegmentation( dim, gamma, eta, initial_class, avelen, maxlen, minlen, skiplen)
 
-    gpsegm.load_data( [ "data/oms_scaledpcs/dat_oms_%02d.txt" % j for j in range(29) ] )
+    gpsegm.load_data( [ "data/DREADDs_for_smp/case_%02d.txt" % j for j in range(16) ] )
     gpsegm.load_model( modeldir )
 
 
@@ -75,8 +75,8 @@ def main():
       theta3 = 0
 
       # save dir
-      path_learn = "data/learn_OMP_init" + str(int(initial_class)) + "/"
-      path_recog = "data/recog_OMP_init" + str(int(initial_class)) + "/"
+      path_learn = "data/learn_DREADDs_init" + str(int(initial_class)) + "/"
+      path_recog = "data/recog_DREADDs_init" + str(int(initial_class)) + "/"
       path_numclass = path_learn + "num_class.txt"
 
       df = pd.DataFrame([dim, beta, theta0, theta1, theta2, theta3, gamma, eta, initial_class, avelen, maxlen, minlen, skiplen, path_learn, path_recog])
