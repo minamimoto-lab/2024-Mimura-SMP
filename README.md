@@ -64,6 +64,11 @@ SMP works in this environment at a minimum. If you wish to reproduce the data an
   - x_..., y_..., z_...: 3D position of body parts (scaled)
   - PC1-13: scaled principal component scores ( pcs/max(abs(pcs)))
 
+- `data/dat_marmofeed_feedingTimeStamp.csv`
+  - dataid
+  - frame (30 fps)
+  - type: feeding type (manually annotated)
+  - sec: timestamp (s)
 
 # 3. Macaque motion analysis
 
