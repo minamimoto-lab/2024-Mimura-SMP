@@ -47,8 +47,22 @@ SMP works in this environment at a minimum. If you wish to reproduce the data an
 # 2. Marmoset free-feeding behavior
 
 ## data processing
-- [Podyutr model: The UMAP and k-means clustering](r_marmofeed_UMAP_kmeans.md)
+- [Posture model: The UMAP and k-means clustering](r_marmofeed_UMAP_kmeans.md)
 - [SMP vs. the Posture Model](r_marmofeed_SMPvsPosturemodel.md)
+
+
+## data
+
+- `data/dat_ SMPresults_marmofeed.csv`
+  - dataid
+  - sec: timestamp (s)
+  - motif: motif ID
+  - tag_motif: index of segmented data
+  - kclust18: cluster ID (UMAP + k-means with k=18)
+  - kclust06: cluster ID (UMAP + k-means with k=6)
+  - v_...: 3D velocity of body parts
+  - x_..., y_..., z_...: 3D position of body parts (scaled)
+  - PC1-13: scaled principal component scores ( pcs/max(abs(pcs)))
 
 
 # 3. Macaque motion analysis
