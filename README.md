@@ -116,3 +116,17 @@ python SMP_omp.py
 ```
 python SMP_omp.py
 ```
+
+## data
+
+- `data/dat_SMPresults_marmoDREADDs.csv`
+  - Treat: treatment condition (DCZ or vehicle)
+  - section: time after treatment
+  - date: the date of behavior test
+  - motif: id of motion motifs
+  - tag: id of segmentaed data fragments
+  - sec: time after treatment (s)
+  - parameters (scaled)
+  - x: time since the beginning of the segment (s)
+  - PCs (scaled)
+  
