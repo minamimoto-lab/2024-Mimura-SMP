@@ -50,7 +50,7 @@ SMP works in this environment at a minimum. If you wish to reproduce the data an
 
   - [Posture model: The UMAP and k-means clustering](r_marmofeed_UMAP_kmeans.md)
   - [SMP vs. the Posture Model](r_marmofeed_SMPvsPosturemodel.md)
-  - Run `SMP_DREADDs.py` for SMP simulation.
+  - Run `SMP_marmofeed.py` for SMP simulation.
 
 ```
 python SMP_marmofeed.py
