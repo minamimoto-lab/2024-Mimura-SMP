@@ -16,6 +16,8 @@ E-mail: kmimura@ncnp.ac.jp
 
 This algorithm optimizes the kernel function and hyperparameters of the [HDP-GP-HSMM](https://github.com/naka-lab/HDP-GP-HSMM) by Dr. Tomoaki, Nakamura to conform to primate behavior analysis.
 
+ref. Masatoshi Nagano, Tomoaki Nakamura, Takayuki Nagai, Daichi Mochihashi, Ichiro Kobayashi and Masahide Kaneko, “Sequence Pattern Extraction by Segmenting Time Series Data Using GP-HSMM with Hierarchical Dirichlet Process”, 2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), pp. 4067-4074, Oct. 2018
+
 
 # 1. Environment
 
