@@ -73,7 +73,7 @@ python SMP_marmofeed.py
   - kclust06: cluster ID (UMAP + k-means with k=6)
   - v_...: 3D velocity of body parts
   - x_..., y_..., z_...: 3D position of body parts (scaled)
-  - PC1-13: scaled principal component scores ( pcs/max(abs(pcs)))
+  - PC1-13: scaled principal component scores (pcs/max(abs(pcs)))
 
 - `data/dat_marmofeed_feedingTimeStamp.csv`
   - dataid
