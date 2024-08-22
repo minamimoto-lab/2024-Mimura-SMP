@@ -10,7 +10,7 @@ editor: visual
 
 
 
-**Koki Mimura***, Jumpei Matsumoto, Daichi Mochihashi, Tomoaki Nakamura, Hisao Nishijo, Makoto Higuchi, Toshiyuki Hirabayashi, Takafumi Minamimoto: Unsupervised decomposition of natural monkey behavior into a sequence of motion motifs, bioRxiv, doi: https://doi.org/10.1101/2023.03.04.531044 (under revesion)
+**Koki Mimura***, Jumpei Matsumoto, Daichi Mochihashi, Tomoaki Nakamura, Hisao Nishijo, Makoto Higuchi, Toshiyuki Hirabayashi, Takafumi Minamimoto, "Unsupervised decomposition of natural monkey behavior into a sequence of motion motifs", bioRxiv, doi: https://doi.org/10.1101/2023.03.04.531044 (under revesion)
 
 E-mail: kmimura@ncnp.ac.jp
 
