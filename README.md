@@ -62,7 +62,7 @@ python SMP_marmofeed.py
   - datid
   - frame
   - time (s)
-  - xyz_coordinates: Face_, Head_, Hip_, Trunk_
+  - xyz_coordinates: Face_, Head_, Hip_, Trunk_ (m)
 
 - `data/dat_ SMPresults_marmofeed.csv`
   - dataid
