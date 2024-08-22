@@ -58,6 +58,12 @@ python SMP_marmofeed.py
 
 ## data
 
+- `data/rawdata_marmofeed.csv`
+  - datid
+  - frame
+  - time (s)
+  - xyz_coordinates: Face_, Head_, Hip_, Trunk_
+
 - `data/dat_ SMPresults_marmofeed.csv`
   - dataid
   - sec: timestamp (s)
